@@ -5,24 +5,213 @@ import numpy as np
 # Dados
 # =========================
 
-graduations_scope = ("cinza", "verde", "azul", "amarelo")
+#graduations_scope = ("cinza", "verde", "azul", "amarelo")
+
+#graduations_data = {
+#    "cinza": {
+#        "desequilibrante": ["Cd1", "Cd2"],
+#        "traumatizante": ["Ct1", "Ct2"],
+#    },
+#    "verde": {
+#        "desequilibrante": ["Vd1", "Vd2"],
+#        "traumatizante": ["Vt1", "Vt2"],
+#    },
+#    "amarelo": {
+#        "desequilibrante": ["Ad1", "Ad2"],
+#        "traumatizante": ["At1", "At2"],
+#    },
+#    "azul": {
+#        "desequilibrante": ["Azd1", "Azd2"],
+#        "traumatizante": ["Azt1", "Azt2"],
+#    },
+#}
+
+graduations_scope = ("verde", "amarelo","azul","verde e amarelo","verde e azul","amarelo e azul")
 
 graduations_data = {
-    "cinza": {
-        "desequilibrante": ["Cd1", "Cd2"],
-        "traumatizante": ["Ct1", "Ct2"],
+"azul": {
+        "traumatizante": [
+            "Chapa Lateral",
+            "Chapa giratória",
+            "Chapa de chão",
+            "Gancho",
+            "Chapéu de couro",
+        ],
+        "esquivas": [
+            "Queda de quatro",
+            "Recuo com cadeira lateral",
+            "Esquiva lateral com apoio e rolê",
+        ],
+        "desequilibrante": [
+            "Arrastão",
+            "Rasteira cruzada",
+            "Tesoura de frente",
+        ],
+        "floreios": [
+            "Aú batido",
+            "Aú dobrado",
+            "Cama de gato",
+            "S dobrado",
+            "Mergulho",
+            "Corta capim",
+        ],
+    },
+"amarelo e azul": {
+        "traumatizante": [
+            "Voo do morcego",
+            "Draps",
+            "Cobertura (variação)",
+            "Escorpião",
+            "Chibata",
+            "Quebra de Perna",
+            "Cabeçadas",
+            "Facão",
+        ],
+        "esquivas": [
+            "Deslocamento de sentido",
+            "Giros ofensivos",
+            "Giros defensivos",
+            "Sequência de giros, balanços e deslocamentos (mín. 5 movimentos)",
+        ],
+        "desequilibrante": [
+            "Cruz",
+            "Crucifixo",
+            "Banda Trançada",
+            "Rasteira quebrada",
+            "Deslocamento de eixo",
+        ],
+        "floreios": [
+            "Aú dobrado sem as mãos",
+            "Aú com queda de rim",
+            "Roda baiana",
+            "Raiz",
+            "Raiz sem as mãos",
+            "Gato dobrado",
+            "Salto do peixe",
+            "Salto mortal",
+        ],
     },
     "verde": {
-        "desequilibrante": ["Vd1", "Vd2"],
-        "traumatizante": ["Vt1", "Vt2"],
+        "traumatizante": [
+            "Benção",
+            "Meia-lua de frente",
+            "Meia-lua de compasso",
+            "Martelo",
+            "Queixada",
+            "Armada",
+        ],
+        "esquivas": [
+            "Cadeira",
+            "Cocorinha",
+            "Queda de três",
+            "Esquiva lateral com apoio",
+        ],
+        "desequilibrante": [
+            "Rasteira de frente",
+            "Rasteira de frente baixa",
+        ],
+        "floreios": [
+            "Queda de rim",
+            "Aú aberto",
+            "Aú fechado",
+            "Aú agulha",
+        ],
     },
     "amarelo": {
-        "desequilibrante": ["Ad1", "Ad2"],
-        "traumatizante": ["At1", "At2"],
+        "traumatizante": [
+            "Queixada Lateral",
+            "Martelo de Base",
+            "Ponteira",
+            "Chapa de Frente",
+            "Armada Pulada",
+        ],
+        "esquivas": [
+            "Entrada de Negativa",
+            "Negativa de Avanço",
+            "Negativa de Fundo",
+        ],
+        "desequilibrante": [
+            "Rasteira de Costas",
+            "Rasteira de Espelho",
+            "Vingativa",
+            "Boca de Calça",
+        ],
+        "floreios": [
+            "Aú com uma mão",
+            "Aú Rolê",
+            "Bananeira",
+            "Parada de Cabeça",
+            "Macaco",
+            "Peão de Mão",
+            "Ponte",
+        ],
     },
-    "azul": {
-        "desequilibrante": ["Azd1", "Azd2"],
-        "traumatizante": ["Azt1", "Azt2"],
+    "verde e amarelo": {
+        "traumatizante": [
+            "Armada Solta",
+            "Chapa de costas",
+            "Coice de Mula",
+            "Martelo Giratório",
+            "Meia-Lua Solta",
+            "Martelo com apoio Básico",
+        ],
+        "esquivas": [
+            "Descida Básica",
+            "Esquiva Balão",
+            "Resistência",
+            "Entrada de Encruzilhada",
+        ],
+        "desequilibrante": [
+            "Banda por Dentro",
+            "Cabeçadas",
+            "Tesoura de Costas",
+        ],
+        "floreios": [
+            "Aú Chibata",
+            "Aú de Costas",
+            "Aú sem as Mãos",
+            "Beija-Flor",
+            "Camaleão",
+            "Volta por Cima",
+            "Gato",
+            "Espera de Frente",
+        ],
+    },
+    "verde e azul": {
+        "traumatizante": [
+            "Armada Dupla",
+            "Calcanheira",
+            "Encruzilhada",
+            "Escorão",
+            "Parafuso",
+            "Gancho com apoio",
+            "Rabo de arraia",
+        ],
+        "esquivas": [
+            "Esquiva Básica",
+            "Deslocamento Lateral",
+        ],
+        "desequilibrante": [
+            "Arrastão Lateral",
+            "Banda de Costas",
+            "Rasteira de Mão",
+            "Rasteira na base do Aú",
+            "Negativa de Alavanca",
+        ],
+        "floreios": [
+            "Aú Camaleão",
+            "Aú invertido",
+            "Aú com inversão de base",
+            "Peão de Cabeça",
+            "Escovão",
+            "Macaco Dobrado",
+        ],
+        "defesa_e_ataque_com_as_maos": [
+            "Cotovelada",
+            "Cutilada",
+            "Gravata",
+            "Telefone",
+        ],
     },
 }
 

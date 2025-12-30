@@ -3,4 +3,5 @@ App web para gera um treino randomico dentro de sua graduação dentro da academ
 
 ## TO-DO:
 - Ajustar para app puxar os demais tipos de movimentos;
-- Modificar input da quantidade de movimentos por tipo -> Criar botões de "+" e "-"
+- [OK] Modificar input da quantidade de movimentos por tipo -> Criar botões de "+" e "-"
+- Fazer com que máximo seja correspondente ao número de elementos disponíveis para o sorteio.
